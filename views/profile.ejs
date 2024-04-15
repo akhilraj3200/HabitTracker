@@ -1,0 +1,28 @@
+<section class = "profile_view">
+   
+
+   <% if (user.id == cur_user_id){ %>
+    
+        <img src="<%= user.avatar %>" alt="a.jpg" height = "30px" width = "70px">
+    
+    
+    <form action = "/user/Update" method="post" enctype="multipart/form-data">
+       
+        name : <input name = "name" value = <%= user.name %>>
+        email : <input name = "email" value = <%= user.email %> >
+        <input type = "hidden" name = "_id" value = <%= user._id %> >
+        <input type="file" name="avatar" />
+        <input type = 'submit' value = "Edit Profile">
+       
+    </form>
+
+    <% }else{ %>
+        <div class="profile_picture">
+            <img src="<%= user.avatar %>" alt="a.jpg" height = "150px" width = "200px">
+        </div>
+        
+    <p>user : <%= user.name %></p><br>
+    <p>email : <%= user.email %></p><br>
+    <% } %>
+
+</section>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel = "stylesheet" href ="/css/themes/default.min.css" >
+    
+    <link rel="stylesheet" href="/<%= assetPath('css/layout.css') %>">
+    <link rel="stylesheet" href = "/<%= assetPath('css/header.css') %>">
+    <link rel="stylesheet" href = "/<%= assetPath('css/footer.css') %>">
+    <link rel="stylesheet" href = "/<%= assetPath('css/home.css') %>">
+    <link rel="stylesheet" href="/<%= assetPath('css/profile.css') %>">
+    <link rel = "stylesheet" href = "/<%= assetPath('css/sign_in.css')%>">
+    <link rel ="stylesheet" href = "/<%= assetPath('css/alertify.min.css') %>">
+    <link rel = "stylesheet" href = "/<%= assetPath('css/detailview.css') %>">
+    <script src="https://kit.fontawesome.com/4c073579f0.js" crossorigin="anonymous"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/<%= assetPath('js/Date.js')%>"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js" integrity="sha512-hUhvpC5f8cgc04OZb55j0KNGh4eh7dLxd/dPSJ5VyzqDWxsayYbojWyl5Tkcgrmb/RVKCRJI1jNlRbVP4WWC4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<style>
+    .selected {background-color:green;}
+    .unselected{background-color: yellow;}
+  </style>
+    <script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+<script src="/<%= assetPath('/js/alertify.min.js') %>"></script>
+  
+    <%- style %>
+    <%- script %>
+
+</head>
+<body class = "layout">
+    <%- include('_header') %>
+ 
+    <div>
+     
+    <%- body %>
+
+    <% if (err != ""){ %>
+        <script>
+            var msg = "<%= err %>";
+            alertify.set('notifier','position', 'top-right');
+        alertify.notify(msg, 'error', 5); 
+
+    </script>
+       
+    <% } %>
+    <% if (msg != ""){ %>
+        <script>
+            var msg = "<%= msg %>";
+            alertify.set('notifier','position', 'top-right');
+        alertify.notify(msg, 'success', 5); 
+
+    </script>
+       
+    <% } %>
+        
+    
+
+        </div>
+    <%- include('_footer') %>
+    <%- script %>
+
+
+</body>
+
+
+
+
+</html>

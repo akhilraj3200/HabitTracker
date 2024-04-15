@@ -1,0 +1,33 @@
+
+<div class = "main">
+  <div class = "flex_habit">
+<section class = "detailviewpost">
+    <form action="/PostHabit" method = "post">
+        <label for ></label>
+        Habit Name: <input name="habit_name">
+        <input name = "start_date" id = "date_start" type = "hidden">
+        <input name = "update_date", id = "date_update" type = "hidden">
+        &nbsp; Routine : <select name= "routine" id= "routine">
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+          </select>
+
+        <input type="submit" value = "Submit Habit Details">
+    </form>
+</section>
+<script type="text/javascript">
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById('date_start').value = y+'/'+m+'/'+d;
+    document.getElementById('date_update').value = "";
+  </script>
+  </div>
+  </div>
+  <div style = text-align:left>
+    <a href = "/Mainpage/Daily">Back</a>
+</div>
+
+  

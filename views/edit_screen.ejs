@@ -1,0 +1,36 @@
+
+<div class = "main">
+<section class = "detailviewpost">
+    <form action="/update/<%= data.id %>" method = "post">
+        
+        Habit Name : <input name="HabitName" id = "name" value = <%= data.HabitName %>  >
+        
+        
+        Routine : <select name= "Routine" id= "routine">
+            <% if(data.Routine == "Daily"){ %>
+            <option value="Daily" selected>Daily</option>
+            <% }else{ %>
+                <option value="Daily">Daily</option>
+                <% } %>
+            <% if(data.Routine == "Weekly"){ %>
+                <option value="Weekly" selected>Weekly</option>
+                <% }else{ %>
+                    <option value="Weekly">Weekly</option>
+                    <% } %>
+            <% if(data.Routine == "Monthly"){ %>
+                <option value="Monthly" selected>Monthly</option>
+                <% }else{ %>
+                    <option value="Monthly">Monthly</option>
+                    <% } %>
+          </select>
+
+        <input type="submit" value = "update">
+    </form>
+</section>
+<br>
+<br>
+
+</div>
+<div style = text-align:left>
+    <a href = "/Mainpage/Daily">Back</a>
+</div>

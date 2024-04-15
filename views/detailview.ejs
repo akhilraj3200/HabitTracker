@@ -1,0 +1,52 @@
+
+    <div class="main">
+        <div class = "flex_habit">
+            <div class = "habit_details_title">
+    <h3>Habit Tracker</h3>
+    </div>
+<div class = "create_new_habit">
+   <a href = "/DetailViewPostData"><i class="icon-plus-sign"></i> Create New Habit</a> 
+</div>
+<div class = "habit_details_page">
+    <h5><u>Habit Details</u></h5>
+</div>
+<div class = "habit_details_categories">
+    <table>
+        <th><td class = <% if(routine == "Daily"){ %>"selected" <% } else{ %> "unselected" <% } %> ><a href = "/MainPage/Daily">Daily</a></td><td class = <% if(routine == "Monthly"){ %>"selected" <% } else{ %> "unselected" <% } %>><a href = "/MainPage/Monthly">Monthly</a></td><td class = <% if(routine == "Weekly"){ %>"selected" <% } else{ %> "unselected" <% } %>><a href = "/MainPage/Weekly">Weekly</a></td></th>
+    </table>
+</div>
+
+    <div class = "habitlist">
+        <% document.forEach((data)=> { %>
+            <div class = "list">
+        <section class ="comment_view">
+            <div class = "Inner">
+                <div class = "inn_data"><%= data.HabitName %></div>
+                <div class = "inn_data">
+                    <% if(routine == "Daily"){ %><% if (current_date != data.UpdateDate){ %><a href = "/PostTracker/<%= data.id %>"> <button>Mark as Done</button>  </a><% } else{ %>  Done <% } %><% } %><% if(routine == "Monthly"){ %><% if (current_date.split("/")[1] != data.UpdateDate.split("/")[1]){ %><a href = "/PostTracker/<%= data.id %>"> <button>Mark as Done</button>  </a><% } else{ %>  Done <% } %><% } %><% if(routine == "Weekly"){ %><% var cur_week = moment(current_date, "YYYY/MM/DD").week();%> <% var ch_week = moment(data.UpdateDate, "YYYY/MM/DD").week(); %> <% if (cur_week != ch_week){%><a href = "/PostTracker/<%= data.id %>"> <button>Mark as Done</button>  </a><% } else{ %>  Done <% } %><% } %>
+                </div>
+                <div class = "inn_data">
+                    &nbsp; &nbsp; &nbsp; &nbsp; <a href = "/HabitData/<%= data.id %>">View Details</a>&nbsp;&nbsp;&nbsp;<a href = "/updatescreen/<%= data.id %>"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;&nbsp;&nbsp;<a href = "/delete/<%= data.id %>"><i class="fa-solid fa-trash"></i></a><br>
+                </div>
+             </div>
+            <div class = "child">
+            <%= data.StartDate %>
+        </div>
+        <div class = "child">    
+        <small>
+                <%= data.Routine %>
+            </small>
+        </div>
+            </section>
+            <div class = "list">
+                <div class = "Inner">
+              
+        </div>
+        </div>
+        <br>
+        <% }) %>
+    </div>
+    </div>
+</div>
+</div>
+    

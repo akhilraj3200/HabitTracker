@@ -1,0 +1,54 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="center">
+  <label class="label">
+    <input  class="label__checkbox" type="checkbox" />
+    <span class="label__text">
+      <span class="label__check">
+        <i class="fa fa-check icon"></i>
+      </span>
+    </span>
+  </label>
+</div> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Details Page</title>
+</head> -->
+<div class = "main">
+  <div class = "flex_habit">
+
+  <h1>Habit Details Page</h1>
+
+  <div class = "habitdetailsview">
+    <% document.forEach((data)=> { %>
+
+      <section class ="comment_view">
+        Habit Name : <%= data.HabitName %> <br>
+        Start Date : <%= data.StartDate %><br>
+        Routine : <%= data.Routine %><br>
+        Current Streak: <%= data.CurrentStreak %><br>
+
+        Highest Streak : <%= data.HighestStreak %><br>
+
+    
+        DoneDays : <%= data.DoneDays %>
+
+        </section>
+   
+    <br>
+    <% }); %>
+</div>
+<div class = "habittracker">
+  
+</div>
+</div>
+</div>
+<div style = text-align:left>
+  <a href = "/Mainpage/Daily">Back</a>
+</div>
+  
+<!-- </body>
+</html> -->
