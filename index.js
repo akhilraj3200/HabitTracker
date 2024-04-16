@@ -73,7 +73,7 @@ app.use(logger(env.morgan.mode, env.morgan.options))
 
 const data = require('./Config/passport_middleware').pasport_login;
 // const PassportJWTStrategy = require("./config/passport_jwt_authentication")
-const PassportGoogle = require("./config/googleoauth")
+const PassportGoogle = require("./Config/googleoauth")
 var strategy = new LocalStrategy({ usernameField: 'email' },(email, password, done) =>{
     //to do
     User.findOne({email: email}).then(async(user)=>{
