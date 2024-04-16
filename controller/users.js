@@ -1,6 +1,6 @@
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
-var Email = require('../config/emailsender');
+var Email = require('../Config/emailsender');
 const crypto = require('crypto');
 
 module.exports.user_sign_in_controller = (req, res)=>{
